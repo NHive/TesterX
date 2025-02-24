@@ -1,0 +1,23 @@
+[project]
+name = "testerx"
+version = "0.1.0"
+description = "An AI-powered testing engine that automatically generates comprehensive API test cases from OpenAPI specifications, ensuring robust and efficient quality assurance for modern software development."
+authors = [{ name = "chenzibo", email = "qw.54@163.com" }]
+license = { text = "Apache-2.0 license" }
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+    "pytest (>=8.3.4,<9.0.0)",
+    "allure-pytest (>=2.13.5,<3.0.0)",
+    "openai (>=1.61.1,<2.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)",
+]
+
+
+[project.scripts]
+testerx = "testerx.run.run:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
