@@ -4,6 +4,7 @@ import json
 from collections import OrderedDict
 import csv
 
+
 @dataclass
 class OpenAPIComponent:
     """表示 OpenAPI 组件的基类"""
@@ -260,8 +261,6 @@ class OpenAPIParser:
             writer.writerows(rows)  # 写入数据行
 
 
-
-
 if __name__ == '__main__':
     # 从文件加载
     parser = OpenAPIParser(spec_path='res/2.json')
@@ -288,7 +287,7 @@ if __name__ == '__main__':
     compressed_spec = parser.compress_spec()
     print(json.dumps(compressed_spec, ensure_ascii=False))
 
-    parser.to_csv('test.csv')
+    parser.to_csv('res/api.csv')
 
     # 保存到文件
-    parser.save_compressed_spec('compressed_spec.json')
+    parser.save_compressed_spec('res/compressed_spec.json')
