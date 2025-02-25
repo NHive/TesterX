@@ -1,4 +1,4 @@
-from testerx.agent.access import ChatModel as BaseChatModel
+from testerx.agent.chat import ChatModel as BaseChatModel
 from testerx.utils.parsing_yaml_config import AgentTemplateManager
 from typing import List, Dict, Any, Optional
 
@@ -16,7 +16,7 @@ class TemplatedChatModel:
             config_path: YAML 配置文件路径，用于 AgentTemplateManager。
         """
         self.template_manager = AgentTemplateManager(config_path=config_path)
-        self.chat_model = BaseChatModel()  # 使用别名 BaseChatModel
+        self.chat_model = BaseChatModel()
 
     def run_step(self, step_number: int, instance_kwargs: Optional[Dict] = None, user_input: Optional[str] = None,
                  stream=False, temperature=0, max_tokens=None) -> Any:
@@ -85,16 +85,6 @@ def example_templated_usage():
         temperature=0
     )
     print(f"步骤 1 响应:\n{response_step1}")
-
-    # 运行步骤 2 (假设 YAML 中配置了步骤 2)
-    # 假设步骤 2 需要用户输入
-    # response_step2 = templated_model.run_step(
-    #     step_number=2,
-    #     user_input="请详细分析响应结果，并记录关键信息。",
-    #     temperature=0,
-    #     tools_to_use=["store_memory", "complete_step"]
-    # )
-    # print(f"\n步骤 2 响应:\n{response_step2}")
 
 
 if __name__ == '__main__':
