@@ -1,5 +1,3 @@
-\`\`\`markdown
-
 # TesterX
 
 **TesterX**: AI-Driven Automated API Testing Engine, Safeguarding Modern Software Development
